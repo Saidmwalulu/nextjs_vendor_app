@@ -3,13 +3,12 @@ import { AuthCard } from "@/components/auth.card";
 import Loader from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { API_URL } from "@/server";
-import { setAuthUser } from "@/store/auth.slice";
+import { useUserStore } from "@/store/user.store";
 import axios from "axios";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { toast } from "sonner";
 
 function VerifyEmail() {
@@ -18,7 +17,7 @@ function VerifyEmail() {
   const [loading, setLoading] = useState(true);
   const [success, setSuccess] = useState<boolean | null>(null);
 
-  const dispatch = useDispatch();
+  const { login } = useUserStore();
 
   useEffect(() => {
     const verifyEmail = async () => {
@@ -29,7 +28,7 @@ function VerifyEmail() {
         setMessage(response.data.success);
         setSuccess(true);
         const user = response.data.user;
-        dispatch(setAuthUser(user));
+        login(user);
       } catch (error) {
         if (axios.isAxiosError(error)) {
           toast.error(error.response?.data?.message || "Error verifying email");
@@ -42,7 +41,7 @@ function VerifyEmail() {
       }
     };
     if (code) verifyEmail();
-  }, [code, dispatch]);
+  }, [code, login]);
 
   const resendEmail = async () => {
     try {
