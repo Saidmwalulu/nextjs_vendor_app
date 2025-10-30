@@ -157,5 +157,5 @@ export const ProductFormSchema = z.object({
       "Each country must have a valid name and ID."
     )
     .default([]),
-  shippingFeeMethod: z.nativeEnum(ShippingFeeMethod),
+  shippingFeeMethod: z.string().optional(),
 });

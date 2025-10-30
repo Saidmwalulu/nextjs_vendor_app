@@ -184,7 +184,7 @@ const CategoryDetails = ({ data }: CategoryProps) => {
                     <FormControl>
                       <Checkbox
                         checked={field.value}
-                        onCheckedChange={(checked) => field.onChange(!!checked)} // force boolean
+                        onCheckedChange={(checked: boolean | "indeterminate") => field.onChange(!!checked)} // force boolean
                       />
                     </FormControl>
                     <div>
