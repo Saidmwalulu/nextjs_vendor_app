@@ -4,7 +4,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
 //import { labels, priorities, statuses } from "@/data/data";
 import { DataTableColumnHeader } from "@/components/data-table-column-header";
-import { DataTableRowActions } from "@/components/data-table-row-actions";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -26,7 +25,6 @@ import {
 import { useModal } from "@/providers/modal-provider";
 import CustomModal from "@/components/shared/custom-modal";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { getCategories } from "@/data/categories";
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";

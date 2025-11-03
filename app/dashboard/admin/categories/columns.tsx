@@ -1,15 +1,9 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-
-import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import Image from "next/image";
-//import { labels, priorities, statuses } from "@/data/data";
-import { CategorySchema } from "@/utils/category.schema";
 import { DataTableColumnHeader } from "@/components/data-table-column-header";
-import { DataTableRowActions } from "@/components/data-table-row-actions";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -21,27 +15,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import {
   BadgeCheck,
   BadgeMinus,
   Edit,
-  MoreHorizontal,
   Trash,
 } from "lucide-react";
 import { useModal } from "@/providers/modal-provider";
 import CustomModal from "@/components/shared/custom-modal";
 import CategoryDetails from "@/components/forms/category-details";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { deleteCategory, getCategory } from "@/data/categories";
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";

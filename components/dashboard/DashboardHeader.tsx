@@ -19,7 +19,6 @@ import { API_URL } from "@/server";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "../modal-toggle";
-import { ThemeSelector } from "../theme-selector";
 
 export default function DashboardHeader() {
   const [isFullscreen, setIsFullscreen] = useState(false);
