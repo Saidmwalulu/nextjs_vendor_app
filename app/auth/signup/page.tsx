@@ -74,7 +74,7 @@ export default function SignUp() {
     }
   }
   return (
-    <div className="dotted-bg flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+    <div className="bg-gray-50 flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
         <AuthCard
           title="Create Account!!"
