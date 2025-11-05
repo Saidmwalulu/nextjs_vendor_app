@@ -51,7 +51,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
             className="w-52 h-52 rounded-full object-cover absolute top-0 left-0 bottom-0 right-0"
           />
         ) : null}
-        <CldUploadWidget uploadPreset={UPLOAD_CLOUDINARY} onSuccess={onUpload}>
+        <CldUploadWidget uploadPreset="mwalulu" onSuccess={onUpload}>
           {({ open }) => (
             <button
               type="button"
@@ -100,7 +100,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
             className="w-full h-full rounded-lg object-cover"
           />
         ) : null}
-        <CldUploadWidget onSuccess={onUpload} uploadPreset={UPLOAD_CLOUDINARY}>
+        <CldUploadWidget onSuccess={onUpload} uploadPreset="mwalulu">
           {({ open }) => {
             const onClick = () => {
               open();
@@ -166,7 +166,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
               </div>
             ))}
         </div>
-        <CldUploadWidget onSuccess={onUpload} uploadPreset={UPLOAD_CLOUDINARY}>
+        <CldUploadWidget onSuccess={onUpload} uploadPreset="mwalulu">
           {({ open }) => {
             const onClick = () => {
               open();
