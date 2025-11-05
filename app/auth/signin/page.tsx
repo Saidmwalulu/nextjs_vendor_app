@@ -43,7 +43,7 @@ export default function SignIn() {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${API_URL}/auth/login`,
+        "/api/login",
         {
           email: values.email,
           password: values.password,
@@ -52,8 +52,12 @@ export default function SignIn() {
       );
       const user = response.data.user;
       toast.success(response.data.message);
+
       login(user);
-      router.push("/dashboard");
+      
+      if (user.role === "ADMIN") router.push("/dashboard/admin");
+      else if (user.role === "SELLER") router.push("/dashboard/seller");
+      else router.push("/dashboard");
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const errMsg = error.response?.data?.message || "Error logging in";

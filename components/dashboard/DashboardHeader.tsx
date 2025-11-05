@@ -39,7 +39,7 @@ export default function DashboardHeader() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(`${API_URL}/auth/logout`, {
+      const response = await axios.post("/api/logout", {
         withCredentials: true,
       });
       logout();
